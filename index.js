@@ -24,6 +24,7 @@ const app = express()
 app.use(cors())
 app.use(express.json());
 app.use(morgLog)
+app.use(express.static())
 
 let persons = [
     {
