@@ -64,7 +64,8 @@ function nameDuplicated(name) {
 
 
 app.get("/", (request, response) => {
-    response.send('<a href="http://localhost:3001/api/persons">persons</a>')
+    const currentUrl = request.protocol + '://' + request.get('host') + request.originalUrl;
+    response.send(`<a href="${currentUrl}/api/persons">persons</a>`);
 })
 
 app.get("/api/persons", (request, response) => {
